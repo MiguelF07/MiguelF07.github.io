@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sobre</title>
+        <link rel="stylesheet" type="text/css" href="../css/myApp.css">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+        <script type = "text/javascript" src="../javascript/feedback.js"></script>
+    </head>
+    
+    <body>
+        <div class="centered">
+            <ul>
+                <li><a class="hvr-underline-reveal" href="welcome.html">Home</a></li>
+                <li><a class="hvr-underline-reveal" href="catalogo.html">Catálogo</a></li>
+                <li><a class="hvr-underline-reveal" href="sobre.html">Sobre</a></li>
+                <li><a class="hvr-underline-reveal" href="contactos.html">Contactos</a></li>
+                <li><a class="hvr-underline-reveal" href="testemunhos.html">Testemunhos</a></li>
+                <li style="float: right;"><a class="hvr-underline-reveal" href="shoppingcart.html">Shopping Cart</a></li>
+                <li style="float: right;"><a class=" hvr-underline-reveal" href="cliente.html">Cliente</a></li>
+            </ul>
+        </div>
+        <div style="text-align: center; margin-top: 90px;">
+            <h1>Envie-nos o seu feedback</h1>
+        </div>
+        
+        <div class="container3">
+            <form name="feedback" target="_self" method="POST" onsubmit="return validateForm()">
+                <label for="name">
+                    Nome
+                    <input class="inputs3"type="text" id="name2" name="name">
+                    <div id="divnome" style="color: red; width: 100%; height: 25px; font-size: medium; display: none;">
+                        <p>O nome tem de ter mais de 3 caracteres e apenas conter letras.</p>
+                    </div>
+                </label>
+                <label for="email";">
+                    E-mail
+                    <input class="inputs3"type="text" id="email2" name="email">
+                    <div id="divemail" style="color: red; width: 100%; height: 25px; font-size: medium; display: none;">
+                        <p>Insira um e-mail válido.</p>
+                    </div>
+                </label>
+                <label for="telefone">
+                    Telefone
+                    <input class="inputs3"type="text" id="telefone2" name="telefone">
+                    <div id="divtelefone" style="color: red; width: 100%; height: 25px; font-size: medium; display: none;">
+                        <p>Insira um número de telefone válido.</p>
+                    </div>
+                </label>
+                <label for="rating">
+                    Avaliação (1-5)
+                    <input class="inputs3"type="text" id="rating2" name="rating">
+                    <div id="divassunto" style="color: red; width: 100%; height: 25px; font-size: medium; display: none;">
+                        <p>Insira uma avaliação de 1 a 5.</p>
+                    </div>
+                </label>
+                <label for="mensagem">
+                    Mensagem
+                    <textarea id="mensagem2" class="inputs"style = "font-family: 'Raleway', sans-serif;" name="mensagem" cols="40" rows="5"></textarea>
+                    <div id="divmensagem" style="color: red; width: 100%; height: 25px; font-size: medium; display: none;">
+                        <p>Insira uma mensagem com no mínimo 20 caracteres.</p>
+                    </div>
+                </label>
+                <input id="submeter" type="submit" value="Enviar" style="display: inline;">
+            </form>
+
+        </div>
+    </body>
+</html>
