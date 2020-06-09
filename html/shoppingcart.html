@@ -15,6 +15,18 @@
       height: 350px;
       width: 900px;
     }
+    #titulo {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #titulo > h3 {
+      margin-top: 50px;
+    }
+    #titulo > h4{
+      font-size: xx-large;
+      font-weight: bold;
+    }
 
     button.noBorder {
       border: none;
@@ -92,7 +104,12 @@
   <div id="modal-product" class="modal">
     <div class="modal-background"></div>
     <div id="modal-content-product" class="modal-content">
-      AQUI COLOCAS OS ESTILOS E O TEXTO QUE QUISERES
+      <div id="titulo">
+        <h4>A sua encomenda foi efetuada</h4>
+        <h3>Nrº de Encomenda: XXXXXXXXX</h3>
+        <h3>Obrigado pela preferência! Apresente o número de encomenda na sucata onde levantar os artigos. </h3>
+      </div>
+      
     </div>
     <button class="modal-close is-large" onclick="closeModal()" aria-label="close"></button>
   </div>

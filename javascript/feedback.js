@@ -42,18 +42,26 @@ function validateForm() {
         controlo = 1;
     }
     else {
-        //Está tudo mal
-        for(k=0;k<z.length;z++) {
-            if(!(isNaN(z.charAt(k))==false)) {
-                alert(hello);
-                controlo=1;
-                document.getElementById("divtelefone").style.display = "block";
-            }
-            else {
-                document.getElementById("divtelefone").style.display = "none";
-            }
-        }
+         //Está tudo mal
+         for(k=0;k<z.length;z++) {
+             if(!(isNaN(z.charAt(k))==false)) {
+                 alert(hello);
+                 controlo=1;
+                 document.getElementById("divtelefone").style.display = "block";
+             }
+             else {
+                 document.getElementById("divtelefone").style.display = "none";
+             }
+         }
+     }
+    if(a > 1 && a < 5) {
+        document.getElementById("divavaliacao").style.display = "none";
     }
+    else {
+        document.getElementById("divavaliacao").style.display = "block";
+        controlo = 1;
+    }
+
 
     if(b.length<20) {
         document.getElementById("divmensagem").style.display = "block";

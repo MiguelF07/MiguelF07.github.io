@@ -1,8 +1,8 @@
 /* Página Welcome */
 body{
-    background-color: #eeeeee;
-    color: black;
-    font-family: 'Raleway', sans-serif;
+    background-color: #eeeeee !important;
+    color: black !important;
+    font-family: 'Raleway', sans-serif !important;
 }
 /*CSS Hover Nav-Bar*/
 .hvr-underline-reveal {
@@ -38,22 +38,22 @@ body{
   }
 /*Nav-Bar*/
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: #333 !important;
 }
 li {
     float: left;
 }
   
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    display: block !important;
+    color: white !important;
+    text-align: center !important;
+    padding: 14px 16px !important;
+    text-decoration: none !important;
 }
 li a:hover:not(.active) {
     background-color: #111;
