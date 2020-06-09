@@ -19,6 +19,7 @@
       text-align: center;
       margin-left: auto;
       margin-right: auto;
+      padding-top: 50px !important;
     }
     #titulo > h3 {
       margin-top: 50px;
@@ -55,6 +56,15 @@
       background-color: #fff !important;
     }
 
+    #shopping-cart-items > button{
+      float: right; 
+    }
+    .remove-button {
+      position: absolute !important;
+      margin-left: 600px;
+      margin-top: 18px;
+    }
+
 
   </style>
 
@@ -64,19 +74,19 @@
 
   <div class="shoppingcart-wrapper columns is-multiline">
 
-    <div class="shopping-cart column is-8">
+    <div class="shopping-cart column is-8" style>
       <h4 class="title is-4">
         Meu carrinho
       </h4>
       <div id="shopping-cart-items"></div>
     </div>
 
-    <div class="shoppingcart-resume column is-4">
+    <div class="shoppingcart-resume column is-4" style="margin-top: 150px; margin-bottom: 0px;">
       <h4 class="title is-4">
         Resumo do Pedido
       </h4>
       <div id="shopping-cart-details">
-        <h3 class="title is-3 is-pulled-left">Sub-Total</h3>
+        <h3 class="title is-3 is-pulled-left">Sub-Total (€)</h3>
         <h3 id="total-price" class="title is-3 is-pulled-right"></h3>
       </div>
 
@@ -84,18 +94,18 @@
     <div class="promotional-cuppon column is-8">
       <button class="button noBorder" onclick="showInput()">Insira o código promocional</button>
 
-      <div id="cuppon-area">
+      <div id="cuppon-area" style="text-align: center;">
         <input maxlength="20" placeholder="Insira um código promocional" aria-label="Insira um código promocional"
-          style="text-overflow: clip;">
-        <button class="button">OK</button>
+          style="text-overflow: clip; width: 100%; text-align: center;">
+        <button class="button" style="width: 40%; margin-top:20px; background-color: #333;color: white;">OK</button>
       </div>
 
       <button class="button noBorder" onclick="showNote()">Adicione uma nota</button>
-      <textarea id="note-area" maxlength="250" placeholder="Instruções? Pedidos especiais? Adicione aqui."
+      <textarea style="text-align: center;"id="note-area" maxlength="250" placeholder="Instruções? Pedidos especiais? Adicione aqui."
         aria-label="Instruções? Pedidos especiais? Adicione aqui."></textarea>
     </div>
-    <div class="reserv column is-4">
-      <button class="button" onclick="openProductModal()">RESERVAR AGORA!</button>
+    <div class="reserv column is-4" style="text-align: center;">
+      <button style="background-color: #333; color: white;"class="button" onclick="openProductModal()">RESERVAR AGORA!</button>
     </div>
 
 
