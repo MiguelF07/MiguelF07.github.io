@@ -45,7 +45,7 @@ if (valuesOnLSJSON && valuesOnLSJSON.length > 0) {
 }
 
 function createNoProdsMessage() {
-    container.innerHTML = '<p>Não tens produtos adicionados ao Shopping Cart!</p>';
+    container.innerHTML = '<p>Não tens produtos no Carrinho!</p>';
 }
 
 function createItems(arrayProds) {
