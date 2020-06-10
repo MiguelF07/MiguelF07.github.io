@@ -62,7 +62,34 @@ li a:hover:not(.active) {
 .active {
     background-color: #5f5f5f;
 }
-
+.vertical-menu {
+    width: 200px; /* Set a width if you like */
+  }
+  
+  .vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+  }
+  
+  .vertical-menu a.active {
+    background-color: #333; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+  .vl {
+    border-left: 1px solid #333;
+  height: 300px;
+  position: absolute;
+  left: 16%;
+  margin-left: -3px;
+  top: 120px;
+  }
 .text1 {
     width: auto;
     height: auto;
