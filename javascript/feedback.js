@@ -1,11 +1,12 @@
 function validateForm() {
     var x = document.forms["feedback"]["name2"].value;
     var y = document.forms["feedback"]["email2"].value;
-    var z = document.forms["feedback"]["telefone2"].value;
+    var text = document.forms["feedback"]["telefone2"].value;
     var a = document.forms["feedback"]["rating2"].value;
     var b = document.forms["feedback"]["mensagem2"].value;
     var i;
     var k;
+    var letters = /^[A-Za-z]+$/;
     var controlo = 0;
 
 
@@ -37,15 +38,13 @@ function validateForm() {
     else {
         document.getElementById("divemail").style.display = "none";
     }
-    if(z.length>9 || z.length<9) {
+    if(text.length != 9) {
         document.getElementById("divtelefone").style.display = "block";
         controlo = 1;
     }
     else {
-         //Está tudo mal
-         for(k=0;k<z.length;z++) {
-             if(!(isNaN(z.charAt(k))==false)) {
-                 alert(hello);
+         for(k=0;k<9;k++) {
+             if(isNaN(parseInt(text.charAt(k)))) {
                  controlo=1;
                  document.getElementById("divtelefone").style.display = "block";
              }
@@ -54,7 +53,7 @@ function validateForm() {
              }
          }
      }
-    if(a > 1 && a < 5) {
+    if(a >= 1 && a <= 5) {
         document.getElementById("divavaliacao").style.display = "none";
     }
     else {
@@ -70,7 +69,6 @@ function validateForm() {
     else {
         document.getElementById("divmensagem").style.display = "none";
     }
-
     if(controlo==1) {
         return false;
     }
