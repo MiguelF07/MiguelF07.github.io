@@ -7,15 +7,17 @@ var productsCards = [{
     marca: "Volkswagen",
     price: "700,00 €",
     priceInt: 700,
+    searchValues: ['servcarros', 'volkswagen', 'para-choques']
   }, {
     id: "prod-2",
     image: "apara choques 2.jpg",
     name: "Para-choques SEAT Léon Cupra R",
     type: "Para-choques",
     sucata: "Forjães",
-    marca: "SEAT Léon",
+    marca: "SEAT",
     price: "500,00 €",
     priceInt: 500,
+    searchValues: ['forjães', 'seat', 'para-choques']
   }, {
     id: "prod-3",
     image: "aaparachoques.jpg",
@@ -25,6 +27,7 @@ var productsCards = [{
     marca: "BMW",
     price: "400,00 €",
     priceInt: 400,
+    searchValues: ['sbl', 'bmw', 'para-choques']
   },
   {
     id: "prod-4",
@@ -35,6 +38,7 @@ var productsCards = [{
     marca: "Mercedes",
     price: "800,00 €",
     priceInt: 800,
+    searchValues: ['sbl', 'mercedes', 'para-choques']
   }, {
     id: "prod-5",
     image: "aajantes4.jpg",
@@ -44,6 +48,7 @@ var productsCards = [{
     marca: "Mercedes",
     price: "300,00 €",
     priceInt: 300,
+    searchValues: ['servcarros', 'mercedes', 'jantes']
   }, {
     id: "prod-6",
     image: "aajantes3.png",
@@ -53,6 +58,7 @@ var productsCards = [{
     marca: "Golf",
     price: "350,00 €",
     priceInt: 350,
+    searchValues: ['sbl', 'golf', 'jantes']
   }, {
     id: "prod-7",
     image: "aajantes2.jpg",
@@ -62,6 +68,7 @@ var productsCards = [{
     marca: "Audi",
     price: "150,00 €",
     priceInt: 150,
+    searchValues: ['forjães', 'audi', 'jantes']
   }, {
     id: "prod-8",
     image: "aajnate1.png",
@@ -71,6 +78,7 @@ var productsCards = [{
     marca: "BMW",
     price: "250,00 €",
     priceInt: 250,
+    searchValues: ['sbl', 'bmw', 'jantes']
   }, {
     id: "prod-9",
     image: "amotor5.jpg",
@@ -80,6 +88,7 @@ var productsCards = [{
     marca: "Peugeot",
     price: "899,00 €",
     priceInt: 899,
+    searchValues: ['servcarros', 'peugeot', 'motor']
   }, {
     id: "prod-10",
     image: "amotor3.jpg",
@@ -89,6 +98,7 @@ var productsCards = [{
     marca: "Volkswagen",
     price: "1499,00 €",
     priceInt: 1499,
+    searchValues: ['sbl', 'volkswagen', 'motor']
   }, {
     id: "prod-11",
     image: "amotor2.jpg",
@@ -98,6 +108,7 @@ var productsCards = [{
     marca: "Mercedes",
     price: "999,00 €",
     priceInt: 999,
+    searchValues: ['forjães', 'mercedes', 'motor']
   },
   {
     id: "prod-12",
@@ -108,8 +119,14 @@ var productsCards = [{
     marca: "BMW",
     price: "899,00 €",
     priceInt: 899,
+    searchValues: ['sbl', 'bmw', 'motor']
   }
 ];
+
+var filtersAppliedSucata = [];
+var filtersAppliedType = [];
+var filtersAppliedMarca = [];
+var filtersApplied = [];
 
 var container = document.getElementById('catalog');
 var modal = document.getElementById("modal-product");
@@ -117,7 +134,6 @@ var localStorageKey = 'WheelDeal-Project-ShoppingCart';
 
 // Create the catalog on init of the Page
 createCards(productsCards);
-
 
 function createCards(arrayProds) {
 
@@ -215,6 +231,53 @@ function addToShoppingCart() {
   localStorage.setItem(localStorageKey, JSON.stringify(valuesOnLSJSON));
   closeModal();
 }
+
+
+function filterProduct(type, name, event) {
+
+  // validar se é checked ou nao
+  var isCheck = event.target.checked;
+
+  if (!isCheck) {
+    filtersApplied = filtersApplied.filter(x => x !== name);
+  } else {
+    filtersApplied.push(name);
+  }
+
+  var prods = [];
+
+  // Validar se esta presente no  search fields
+  for (var x = 0; x < productsCards.length; x++) {
+    var valuesToSearch = productsCards[x].searchValues;
+    var isValidToShow = false;
+    for (var i = 0; i < filtersApplied.length; i++) {
+      if (valuesToSearch.indexOf(filtersApplied[i]) !== -1) {
+        isValidToShow = true;
+      }
+    }
+
+    if (!isValidToShow && filtersApplied.length > 0) {
+      document.querySelector(".card#" + productsCards[x].id).style.display = "none";
+    } else {
+      document.querySelector(".card#" + productsCards[x].id).style.display = "block";
+    }
+  }
+
+
+  var findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
+
+  console.log(findDuplicates(prods)) // All duplicates
+  console.log([...new Set(findDuplicates(prods))]) // Unique duplicates
+
+
+
+
+
+  console.log(prods);
+}
+
+
+
 
 // w3schools accordion example
 var acc = document.getElementsByClassName("accordion");

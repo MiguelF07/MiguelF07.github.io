@@ -219,18 +219,7 @@
     <div class="catalog-container">
         <div class="filters">
             <h6 class="title is-5">Filtrar por: </h6>
-
-            <button class="accordion">Preço</button>
-            <div class="panel slider">
-                <div class="slidecontainer">
-                    <input type="range" min="250" max="1499" value="1499" class="slider" id="myPriceRange">
-                    <p>
-                        <span style="float: left;">250€</span>
-                        <span style="float: right;">1499€</span>
-                    </p>
-                </div>
-            </div>
-
+          
             <button class="accordion">Locais de Venda</button>
             <div class="panel">
                 <input type="checkbox" onchange="filterProduct('sucata', 'sbl', event)" id="sbl" name="sbl" value="sbl">
@@ -247,35 +236,35 @@
 
             <button class="accordion">Tipo de Material</button>
             <div class="panel">
-                <input type="checkbox" id="jantes" name="jantes" value="jantes">
+            <input type="checkbox" onchange="filterProduct('type', 'jantes', event)" id="jantes" name="jantes" value="jantes">
                 <label for="jantes"> Jantes</label><br>
 
-                <input type="checkbox" id="para-choques" name="para-choques" value="para-choques">
+            <input type="checkbox" onchange="filterProduct('type', 'para-choques', event)" id="para-choques" name="para-choques" value="para-choques">
                 <label for="para-choques"> Para-choques</label><br>
 
-                <input type="checkbox" id="motores" name="motores" value="motores">
+            <input type="checkbox" onchange="filterProduct('type', 'motores', event)" id="motores" name="motores" value="motores">
                 <label for="motores"> Motores</label><br>
 
             </div>
 
             <button class="accordion">Marca</button>
             <div class="panel">
-                <input type="checkbox" id="BMW" name="BMW" value="BMW">
+                <input type="checkbox" onchange="filterProduct('marca', 'bmw', event)" id="BMW" name="BMW" value="BMW">
                 <label for="BMW"> BMW</label><br>
 
-                <input type="checkbox" id="Volkswagen" name="Volkswagen" value="Volkswagen">
+                <input type="checkbox" onchange="filterProduct('marca', 'volkswagen', event)" id="Volkswagen" name="Volkswagen" value="Volkswagen">
                 <label for="Volkswagen"> Volkswagen</label><br>
 
-                <input type="checkbox" id="Audi" name="Audi" value="Audi">
+                <input type="checkbox" onchange="filterProduct('marca', 'audi', event)" id="Audi" name="Audi" value="Audi">
                 <label for="Audi"> Audi</label><br>
 
-                <input type="checkbox" id="Mercedes-Benz" name="Mercedes-Benz" value="Mercedes-Benz">
+                <input type="checkbox" onchange="filterProduct('marca', 'mercedes', event)" id="Mercedes-Benz" name="Mercedes-Benz" value="Mercedes-Benz">
                 <label for="Mercedes-Benz"> Mercedes-Benz</label><br>
 
-                <input type="checkbox" id="SEAT" name="SEAT" value="SEAT">
+                <input type="checkbox" onchange="filterProduct('marca', 'seat', event)" id="SEAT" name="SEAT" value="SEAT">
                 <label for="SEAT"> SEAT</label><br>
 
-                <input type="checkbox" id="Peugeot" name="Peugeot" value="Peugeot">
+                <input type="checkbox" onchange="filterProduct('marca', 'peugeot', event)" id="Peugeot" name="Peugeot" value="Peugeot">
                 <label for="Peugeot"> Peugeot</label><br>
             </div>
         </div>
